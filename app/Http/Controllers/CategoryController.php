@@ -35,6 +35,8 @@ class CategoryController extends Controller
 
         return view('categoryTreeview',compact('categories','allCategories'));
 
+         return redirect('category-tree-view');
+
     }
 
 
@@ -66,9 +68,10 @@ class CategoryController extends Controller
 
         Category::create($input);
 
-        return back()->with('success', 'New Category added successfully.');
+        session()->put('info','Item created successfully bahe.');
+
+        return redirect('category-tree-view');
 
     }
-
 
 }

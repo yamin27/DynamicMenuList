@@ -19,3 +19,6 @@ Route::get('/', function () {
 Route::get('category-tree-view',['uses'=>'CategoryController@manageCategory']);
 
 Route::post('add-category',['as'=>'add.category','uses'=>'CategoryController@addCategory']);
+
+Route::get('dropzoneFile','HomeController@dropzoneFile') ;
+Route::post('dropzoneUploadFile',array('as'=>'dropzone.uploadfile','uses'=>'HomeController@dropzoneUploadFile')) ;
